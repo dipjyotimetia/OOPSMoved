@@ -1,12 +1,13 @@
-# OOPS
-
 
 ### Class
+```cs
 class SampleClass
 {
 }
+```
 
 ### Object
+```cs
 SampleClass sampleObject = new SampleClass();
 
 // Set a property value.
@@ -17,16 +18,20 @@ sampleObject.sampleMethod();
 
 // Set a property value.
 SampleClass sampleObject = new SampleClass{ FirstProperty = "A", SecondProperty = "B" };
-	
+```
 
 ### Class Members
-###  Fields
+####  Fields
+```cs
 Class SampleClass
 {
     public string sampleField;
 }
+```
 
-Properties 
+#### Properties 
+
+```cs
 class SampleClass
 {
     public int SampleProperty { get; set; }
@@ -40,9 +45,10 @@ class SampleClass
         set { _sample = value; }
     }
 }
-
+```
 
 ### Methods
+```cs
  public int sampleMethod(string sampleParam)
     {
         // Insert code here
@@ -50,8 +56,11 @@ class SampleClass
 	
 public int sampleMethod(string sampleParam) {};
 public int sampleMethod(int sampleParam) {}
+```
 	
 ### Constructors
+```cs
+
 public class SampleClass
 {
     public SampleClass()
@@ -59,9 +68,10 @@ public class SampleClass
         // Add code here
     }
 }	
-
+```
 
 ### Nested Classes
+```cs
 class Container
 {
     class Nested
@@ -71,26 +81,33 @@ class Container
 }
 
 Container.Nested nestedInstance = new Container.Nested()
+```
 
 ### Static Classes and Members
+```cs
 static class SampleClass
 {
     public static string SampleString = "Sample String";
 }
 Console.WriteLine(SampleClass.SampleString);
+```
 
 ### Anonymous Types
+```cs
 // sampleObject is an instance of a simple anonymous type.
 var sampleObject = new { FirstProperty = "A", SecondProperty = "B" };
-	
+```	
 	
 ## Inheritance	
 ### To inherit from a base class:
 //By default all classes can be inherited. However, you can specify whether a class must not be used as a base class, or create a class that can be used as a base class only.
+```cs
 class DerivedClass:BaseClass{}
+```
 
 ## Sealed Class
 ### Example 1
+```cs
 //Z inherits from Y but Z cannot override the virtual function F that is declared in X and sealed in Y.
 class X
 {
@@ -112,9 +129,10 @@ class Z : Y
     // Overriding F2 is allowed.
     protected override void F2() { Console.WriteLine("Z.F2"); }
 }
+```
 
 ### Example 2
-
+```cs
 sealed class SealedClass
 {
     public int x;
@@ -132,19 +150,24 @@ class SealedTest2
     }
 }
 // Output: x = 110, y = 150
-
+```
 
 
 
 //To specify that a class can be used as a base class only and cannot be instantiated:
+```cs
 public sealed class A { }
+```
 
 //To specify that a class can be used as a base class only and cannot be instantiated:
+```cs
 public abstract class B { }
+```
 
 ## Abstract Class
 
 ### Example 1
+```cs
 interface I
 {
     void M();
@@ -153,8 +176,10 @@ abstract class C : I
 {
     public abstract void M();
 }
+```
 
 ### Example 2
+```cs
 abstract class ShapesClass
 {
     abstract public int Area();
@@ -191,9 +216,10 @@ class Square : ShapesClass
 
 }
 // Output: Area of the square = 144
-
+```
 
 ### Example 3
+```cs
 abstract class BaseClass   // Abstract class
 {
     protected int _x = 100;
@@ -235,9 +261,10 @@ class DerivedClass : BaseClass
     }
 }
 // Output: x = 111, y = 161
-
+```
 
 ### virtual
+```cs
 public virtual double Area() 
 {
     return x * y;
@@ -259,9 +286,10 @@ class MyBaseClass
         set { num = value; }
     }
 }
-
+```
 
 ### Example 2
+```cs
 class TestClass
 {
     public class Shape
@@ -337,8 +365,10 @@ class TestClass
         Area of Sphere   = 113.10
         Area of Cylinder = 150.80
     */
+```
 	
 ### Example 1
+```cs
 class MyDerivedClass : MyBaseClass
 {
     private string name;
@@ -365,7 +395,7 @@ class MyDerivedClass : MyBaseClass
     }
 
 }
-
+```
 
 ### Overriding Members
 
@@ -381,11 +411,14 @@ An interface has the following properties:
 
 
 ### Define an interface
+```cs
 interface ISampleInterface
 {
     void doSomething();
 }
+```
 
+```cs
 //To implement an interface in a class:
 class SampleClass : ISampleInterface
 {
@@ -394,11 +427,13 @@ class SampleClass : ISampleInterface
         // Method implementation.
     }
 }
+```
 
 
 #### Explicit Interface Implementation
 If a class implements two interfaces that contain a member with the same signature, then implementing that member on the class will cause both interfaces to use that member as their implementation. In the following example, all the calls to Paint invoke the same method.
 
+```cs
 class Test 
 {
     static void Main()
@@ -437,9 +472,13 @@ class SampleClass : IControl, ISurface
 // Paint method in SampleClass
 // Paint method in SampleClass
 
+```
+
+
 
 If the two interface members do not perform the same function, however, this can lead to an incorrect implementation of one or both of the interfaces. It is possible to implement an interface member explicitly—creating a class member that is only called through the interface, and is specific to that interface. This is accomplished by naming the class member with the name of the interface and a period. For example:
 
+```cs
 public class SampleClass : IControl, ISurface
 {
     void IControl.Paint()
@@ -468,7 +507,13 @@ s.Paint(); // Calls ISurface.Paint on SampleClass.
 // IControl.Paint
 // ISurface.Paint
 
+```
+
+
+
 Explicit implementation is also used to resolve cases where two interfaces each declare different members of the same name such as a property and a method:
+```cs
+
 interface ILeft
 {
     int P { get;}
@@ -477,19 +522,21 @@ interface IRight
 {
     int P();
 }
+```
 
 
 To implement both interfaces, a class has to use explicit implementation either for the property P, or the method P, or both, to avoid a compiler error. For example:
+```cs
 class Middle : ILeft, IRight
 {
     public int P() { return 0; }
     int ILeft.P { get { return 0; } }
 }
-
+```
 
 #### Explicitly Implement Interface Members
 This example declares an interface, IDimensions, and a class, Box, which explicitly implements the interface members getLength and getWidth. The members are accessed through the interface instance dimensions.
-
+```cs
 interface IDimensions
 {
     float getLength();
@@ -542,10 +589,11 @@ class Box : IDimensions
     Width: 20
 */
 
-
+```
 
 #### Explicitly Implement Members of Two Interfaces
 Explicit interface implementation also allows the programmer to implement two interfaces that have the same member names and give each interface member a separate implementation. This example displays the dimensions of a box in both metric and English units. The Box class implements two interfaces IEnglishDimensions and IMetricDimensions, which represent the different measurement systems. Both interfaces have identical member names, Length and Width.
+```cs
 // Declare the English units interface:
 interface IEnglishDimensions
 {
@@ -658,11 +706,13 @@ public static void Test()
     System.Console.WriteLine("Length(cm): {0}", mDimensions.Length());
     System.Console.WriteLine("Width (cm): {0}", mDimensions.Width());
 }
+```
 
 
 ### override 
 
 #### Example 1
+```cs
 abstract class ShapesClass
 {
     abstract public int Area();
@@ -699,9 +749,10 @@ class Square : ShapesClass
 
 }
 // Output: Area of the square = 144
-
+```
 
 #### Example 2
+```cs
 class TestOverride
 {
     public class Employee
@@ -766,10 +817,11 @@ class TestOverride
     Employee4 Alice earned: 1500
     Employee4 Bob earned: 1200
 */
-
+```
 
 ### abstract
 #### Example 1
+```cs
 abstract class ShapesClass
 {
     abstract public int Area();
@@ -806,7 +858,7 @@ class Square : ShapesClass
 
 }
 // Output: Area of the square = 144
-
+```
 
 ## New
 * new Operator
@@ -814,7 +866,7 @@ class Square : ShapesClass
 * new Constraint
 
 ### new Operator
-
+```cs
 //Used to create objects and invoke constructors.
 Class1 obj  = new Class1();
 
@@ -829,8 +881,10 @@ int i = new int();
 
 //i is initialized to 0, which is the default value for the type int. The statement has the same effect as the following:
 int i = 0;	
+```
 
 ### Generics
+```cs
 Public class SampleGeneric<T> 
 {
     public T Field;
@@ -839,10 +893,12 @@ Public class SampleGeneric<T>
 
 SampleGeneric<string> sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
+```
 
 
 ### new Modifier
 #### Example 1
+```cs
 public class BaseC
 {
     public int x;
@@ -852,8 +908,10 @@ public class DerivedC : BaseC
 {
     new public void Invoke() { }
 }
+```
 
 #### Example 2
+```cs
 public class BaseC
 {
     public static int x = 55;
@@ -883,8 +941,10 @@ Output:
 55
 22
 */
+```
 
 #### Example 3
+```cs
 public class BaseC 
 {
     public class NestedC 
@@ -922,11 +982,14 @@ Output:
 200
 */
 
+
 //If you remove the new modifier, the program will still compile and run, but you will get the following warning:
 //The keyword new is required on 'MyDerivedC.x' because it hides inherited member 'MyBaseC.x'.
+```
 
 ### new Constraint
 #### Example1
+```cs
 //Apply the new constraint to a type parameter when your generic class creates new instances of the type
 class ItemFactory<T> where T : new()
 {
@@ -935,13 +998,17 @@ class ItemFactory<T> where T : new()
         return new T();
     }
 }
+```
 
 #### Example1
+```cs
 //When you use the new() constraint with other constraints, it must be specified last:
 public class ItemFactory2<T>
     where T : IComparable, new()
 {
 }
+
+```
 
 ### interface 
 
@@ -957,8 +1024,9 @@ A class that implements an interface can explicitly implement members of that in
 
 
 #### Example 1
-An interface contains only the signatures of methods, properties, events or indexers. A class or struct that implements the interface must implement the members of the interface that are specified in the interface definition. In the following example, class ImplementationClass must implement a method named SampleMethod that has no parameters and returns void.
 
+An interface contains only the signatures of methods, properties, events or indexers. A class or struct that implements the interface must implement the members of the interface that are specified in the interface definition. In the following example, class ImplementationClass must implement a method named SampleMethod that has no parameters and returns void.
+```cs
 interface ISampleInterface
 {
     void SampleMethod();
@@ -981,10 +1049,12 @@ class ImplementationClass : ISampleInterface
         obj.SampleMethod();
     }
 }
+```
 
 #### Example 2
 The following example demonstrates interface implementation. In this example, the interface contains the property declaration and the class contains the implementation. Any instance of a class that implements IPoint has integer properties x and y.
 
+```cs
 interface IPoint
 {
    // Property signatures:
@@ -1057,7 +1127,7 @@ class MainClass
 }
 // Output: My Point: x=2, y=3
 
-
+```
 
 public Cylinder(double r, double h): base(r, h) {}
 
