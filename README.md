@@ -3,21 +3,23 @@
 ## TOC
 * Classes and Objects
   * Class Members
-***Properties and Fields
-Methods
-Constructors
-Destructors
-Events
-Nested Classes
-Access Modifiers and Access Levels
-Instantiating Classes
-Static Classes and Members
-Anonymous Types
-Inheritance
-Overriding Members
-Interfaces
-Generics
-Delegates
+    * Properties 
+	* Fields
+	* Methods
+	* Constructors
+	* Destructors
+	* Events
+	* Nested Classes
+	* Access Modifiers and Access Levels
+	* Instantiating Classes
+	* Static Classes and Members
+	* Anonymous Types
+
+* Inheritance
+* Overriding Members
+* Interfaces
+* Generics
+* Delegates
 
 
 ### Class
