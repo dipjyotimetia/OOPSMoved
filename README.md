@@ -1,6 +1,7 @@
 # OOPS
 
 ## TOC
+* OOPS Basic
 * Classes and Objects
   * Class Members
     * Properties 
@@ -20,6 +21,14 @@
 * Interfaces
 * Generics
 * Delegates
+* Abstraction
+* Encapsulation
+* Polymorphism
+* Inheritance
+
+### OOPS Basic
+* [Object Oriented Programming Concepts (OOP)](http://www.codeproject.com/Articles/22769/Introduction-to-Object-Oriented-Programming-Concep)
+* [Diving in OOP](http://www.codeproject.com/Articles/771455/Diving-in-OOP-Day-Polymorphism-and-Inheritance-Ear)
 
 
 ### Class
