@@ -2,7 +2,7 @@
 
 ## TOC
 * Classes and Objects
-**Class Members
+* * Class Members
 ***Properties and Fields
 Methods
 Constructors
